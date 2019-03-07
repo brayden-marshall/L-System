@@ -1,0 +1,12 @@
+{
+    "rules": {
+        "F": "F+F-F"
+    },
+    "axiom": "F",
+    "iterations": 7,
+    "unit": 10,
+    "heading": 0,
+    "angle": 120,
+    "x": 200,
+    "y": 200
+}

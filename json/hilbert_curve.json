@@ -1,0 +1,13 @@
+{
+    "rules": {
+        "A": "-BF+AFA+FB-",
+        "B": "+AF-BFB-FA+"
+    },
+    "axiom": "A",
+    "iterations": 6,
+    "unit": 10,
+    "angle": 90,
+    "heading": 90,
+    "x": -300,
+    "y": -300
+}
