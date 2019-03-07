@@ -1,0 +1,13 @@
+{
+    "rules": {
+        "X": "X+YF+",
+        "Y": "-FX-Y"
+    },
+    "axiom": "FX",
+    "iterations": 10,
+    "unit": 10,
+    "heading": 90,
+    "angle": 90,
+    "x": 200,
+    "y": 0
+}

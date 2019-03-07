@@ -1,0 +1,13 @@
+{
+    "rules": {
+        "X": "F+[[X]-X]-F[-FX]+X",
+        "F": "FF"
+    },
+    "axiom": "X",
+    "iterations": 5,
+    "unit": 10,
+    "heading": 60,
+    "angle": 25,
+    "x": -300,
+    "y": -300
+}

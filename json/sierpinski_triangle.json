@@ -1,0 +1,13 @@
+{ 
+    "rules": {
+        "F": "F-G+F+G-F",
+        "G": "GG"
+    },
+    "axiom":"F-G-G",
+    "iterations": 5,
+    "heading":0,
+    "angle":120,
+    "unit":20,
+    "x":-300,
+    "y":300
+}
