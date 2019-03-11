@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import turtle
 import json
+import re
 # for command line args
 import sys
 
@@ -22,33 +23,6 @@ def read_params(filename):
     file.close()
     return params
 
-def main():
-    if len(sys.argv) < 2:
-        print("Please enter a filename")
-        return
-
-    params = read_params(sys.argv[1])
-    rules = {"F": "F+F--F+F"}
-    axiom = "F--F--F"
-    print(type(params))
-    instructions = rewrite(params["axiom"], params["rules"], params["iterations"])
-
-    heading = params["heading"]
-    ANGLE = params["angle"]
-    UNIT = params["unit"]
-    x = params["x"]
-    y = params["y"]
-
-    t = turtle.Turtle()
-    t.setheading(heading)
-    t.penup()
-    t.setposition(x, y)
-    t.pendown()
-    t.speed(0)
-
-    draw(instructions, t, ANGLE, UNIT)
-    t.hideturtle()
-
 def draw(instructions, t, ANGLE, UNIT):
 
     positions = []
@@ -68,7 +42,37 @@ def draw(instructions, t, ANGLE, UNIT):
             t.setposition(positions.pop())
             t.pendown()
             t.setheading(angles.pop())
+        if i == "|":
+            # turning as close to 180 degrees as ANGLE will allow
+            for i in range(round(180 / ANGLE)):
+                t.right(ANGLE)
 
+def main():
+    if len(sys.argv) < 2:
+        print("Please enter a filename")
+        return
+
+    params = read_params(sys.argv[1])
+    instructions = rewrite(params["axiom"], params["rules"], params["iterations"])
+
+    heading = params["heading"]
+    ANGLE = params["angle"]
+    UNIT = params["unit"]
+    x = params["x"]
+    y = params["y"]
+
+    t = turtle.Turtle()
+    color_regex = re.compile("#[0-9a-fA-F]{6}")
+    if "color" in params and color_regex.match(params["color"]):
+        t.color(params["color"])
+    t.setheading(heading)
+    t.penup()
+    t.setposition(x, y)
+    t.pendown()
+    t.speed(0)
+
+    draw(instructions, t, ANGLE, UNIT)
+    t.hideturtle()
 
 
 if __name__=="__main__":

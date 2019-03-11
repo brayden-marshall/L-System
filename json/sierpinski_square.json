@@ -1,0 +1,12 @@
+{
+    "rules": {
+        "X": "XF-F+F-XF+F+XF-F+F-X"
+    },
+    "axiom": "F+XF+F+XF",
+    "iterations": 4,
+    "heading": 0,
+    "angle": 90,
+    "unit": 10,
+    "x": 0,
+    "y": -300
+}
