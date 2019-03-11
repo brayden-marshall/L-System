@@ -11,7 +11,7 @@ The program currently consists of a single Python program which reads in a JSON 
 
 `main.py`: takes one command line argument (a JSON file) and draws a representation based on the file's contents.  
 ex. `$ ./main.py json/koch_snowflake.json` or `$ python3 json/koch_snowflake.json` will draw:  
-<img src="./koch_snowflake.png" alt="koch_snowflake"/>
+<img width="400" src="./koch_snowflake.png" alt="koch_snowflake"/>
 
 ### JSON file parameters:
 
