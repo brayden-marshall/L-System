@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
+
 import turtle
 import json
 import re
-# for command line args
 import sys
 
 def rewrite(axiom, rules, iterations):
@@ -24,9 +24,10 @@ def read_params(filename):
     return params
 
 def draw(instructions, t, ANGLE, UNIT):
-
+    # stacks used for '[' and ']' commands
     positions = []
     angles = []
+
     for i in instructions:
         if i == "F" or i == "G":
             t.forward(UNIT)
@@ -55,23 +56,17 @@ def main():
     params = read_params(sys.argv[1])
     instructions = rewrite(params["axiom"], params["rules"], params["iterations"])
 
-    heading = params["heading"]
-    ANGLE = params["angle"]
-    UNIT = params["unit"]
-    x = params["x"]
-    y = params["y"]
-
     t = turtle.Turtle()
     color_regex = re.compile("#[0-9a-fA-F]{6}")
     if "color" in params and color_regex.match(params["color"]):
         t.color(params["color"])
-    t.setheading(heading)
+    t.setheading(params["heading"])
     t.penup()
-    t.setposition(x, y)
+    t.setposition(params["x"], params["y"])
     t.pendown()
     t.speed(0)
 
-    draw(instructions, t, ANGLE, UNIT)
+    draw(instructions, t, params["angle"], params["unit"])
     t.hideturtle()
 
 

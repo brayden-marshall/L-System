@@ -10,12 +10,12 @@ The program currently consists of a single Python program which reads in a JSON 
 # Usage
 
 `main.py`: takes one command line argument (a JSON file) and draws a representation based on the file's contents.  
-ex. `$ ./main.py json/koch_snowflake.json` or `$ python3 json/koch_snowflake.json` will draw:  
+ex. `$ ./main.py json/koch_snowflake.json` or `$ python3 main.py json/koch_snowflake.json` will draw:  
 <img width="400" src="./koch_snowflake.png" alt="koch_snowflake"/>
 
 ### JSON file parameters:
 
-- **rules**: an array of production rules ex. {"F": "FF", "G": "F[G]G"}
+- **rules**: an object of production rules ex. {"F": "FF", "G": "F[G]G"}
 	- if a character in the input string does not match any production rules, it will be replaced with itself
 - **axiom**: starting character of rewrite system
 - **iterations**: number of times to rewrite before drawing
